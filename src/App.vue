@@ -1,6 +1,6 @@
 <template>
   <Welcome v-if="!created" @create_game="create"/>
-  <Message v-if="created" @exit="end" @delete="prop_delete" :records="records"/>
+  <Message v-if="created" @delete="prop_delete" :records="records"/>
   <Record_btns v-if="created" @add_record="add_record" :game_info="game_info" :delete_records="delete_records"/>
 </template>
 
@@ -29,9 +29,6 @@ export default {
       this.created = true
       this.game_info = data
     }, 
-    end() {
-      this.created = false
-    },
     add_record(record) {
       record['index'] = this.records.length
       record['selected'] = false

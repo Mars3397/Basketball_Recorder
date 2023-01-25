@@ -74,7 +74,7 @@ export default {
             else if (type == "d_rebound") return "防守籃板"
         },
         exit() {
-            this.$emit('exit')
+            location.reload()
         }, 
         delete_record() {
             var delete_records_index = [], delete_records = []
